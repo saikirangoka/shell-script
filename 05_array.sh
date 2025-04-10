@@ -2,5 +2,5 @@
 
 MOVIES=("SVSC" "sammohanam" "committe kurrollu")
 
-echo "first movie : $MOVIES[0]"
-echo "All movies : $MOVIES[@]"
+echo "first movie : ${MOVIES[0]}"
+echo "All movies : ${MOVIES[@]}"
