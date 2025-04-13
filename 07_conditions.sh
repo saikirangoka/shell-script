@@ -3,7 +3,7 @@
 NUMBER=$1
 
 
--gt,-lt,-eq,-ge,-le
+#-gt,-lt,-eq,-ge,-le
 
 if [ $NUMBER -gt 100 ]
 then
