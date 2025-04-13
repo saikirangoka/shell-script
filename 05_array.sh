@@ -1,6 +1,12 @@
 #!/bin/bash
 
-MOVIES=("SVSC" "sammohanam" "committe kurrollu")
+NUMBER1=$1
+NUMBER2=$2
 
-echo "first movie : ${MOVIES[0]}"
-echo "All movies : ${MOVIES[@]}"
+TIMESTAMP=$(date)
+
+SUM=$(($NUMBER1+$NUMBER2))
+
+echo "script executed at : $TIMESTAMP"
+echo "sum of two numbers : $SUM"
+echo "sum of $1 and $2 : $SUM"
