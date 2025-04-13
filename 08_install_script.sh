@@ -7,4 +7,6 @@ then
     echo "you must have sudo access to execute the script"
 fi
 
-dnf install mysql -y
+dnf install mysqll -y
+
+dnf install git -y
