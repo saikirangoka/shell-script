@@ -7,7 +7,7 @@ then
     echo "you must have sudo access to execute the script"
 fi
 
-dnf install mysqll -y
+dnf install mysql -y
 
 if [ $? -ne 0 ]
 then
