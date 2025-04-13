@@ -28,14 +28,15 @@ fi
 dnf list installed git
 
 if [ $? -ne 0 ]
-dnf install git -y
-    if [ $? -ne 0 ]
-    then
-        echo "installing git.. is fail"
-        exit 1
-    else
-        echo "installing git.. is success"
-    fi
+then
+    dnf install git -y
+        if [ $? -ne 0 ]
+        then
+            echo "installing git.. is fail"
+            exit 1
+        else
+            echo "installing git.. is success"
+        fi  
 else
     echo "git is already installed"
 fi
