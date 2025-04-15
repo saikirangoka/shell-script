@@ -15,10 +15,10 @@ W="\e[0m"
 REPEATED(){
     if [ $1 -ne 0 ]
     then
-        echo "installing $2... is $R fail $W"
+        echo -e "installing $2... is $R fail $W"
         exit 1
     else
-        echo "installing $2... is $G success $W"
+        echo -e "installing $2... is $G success $W"
     fi
 }
 
@@ -28,7 +28,7 @@ then
     dnf install mysql -y
     REPEATED $? mysql
 else
-    echo "mysql is already $Y installed $W"
+    echo -e "mysql is already $Y installed $W"
 fi
 
 dnf list installed git
@@ -37,5 +37,5 @@ then
     dnf install git -y
     REPEATED $? git
 else
-    echo "git is already $Y installed $W"
+    echo -e "git is already $Y installed $W"
 fi
