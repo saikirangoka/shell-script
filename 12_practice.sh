@@ -6,32 +6,36 @@ then
     echo "To execute this command you need root access"
 fi
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+W="\e[0m"
+
+
+REPEATED(){
+    if [ $1 -ne 0 ]
+    then
+        echo "installing $2... is $R fail $W"
+        exit 1
+    else
+        echo "installing $2... is $G success $W"
+    fi
+}
+
 dnf list installed mysql
 if [ $? -ne 0 ]
 then
     dnf install mysql -y
-    if [ $? -ne 0 ]
-    then
-        echo "installing mysql... is fail"
-        exit 1
-    else
-        echo "installing mysql... is success"
-    fi
+    REPEATED $? mysql
 else
-    echo "mysql is already installed"
+    echo "mysql is already $Y installed $W"
 fi
 
 dnf list installed git
 if [ $? -ne 0 ]
 then
     dnf install git -y
-    if [ $? -ne 0 ]
-    then
-        echo "installing git... is fail"
-        exit 1
-    else
-        echo "installing git... is success"
-    fi
+    REPEATED $? git
 else
-    echo "git is already installed"
+    echo "git is already $Y installed $W"
 fi
