@@ -54,7 +54,7 @@ do
     if [ $? -ne 0 ]
     then
         dnf install $package -y &>>$LOG_FILE_NAME
-        VALIDATE() $? $package
+        REPEATED $? $package
     else
         echo -e "$package already $Y installed $W"
     fi
