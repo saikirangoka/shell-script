@@ -1,9 +1,10 @@
 #!/bin/bash
 
 USERIDII=$(id -u)
-if [ USERIDII -ne 0 ]
+if [ $USERIDII -ne 0 ]
 then
     echo "To execute this command you need root access"
+    exit 1
 fi
 
 R="\e[31m"
