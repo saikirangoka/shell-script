@@ -16,7 +16,7 @@ LOGS_FOLDER="/var/logs/shellscript-log"
 mkdir -p "$LOGS_FOLDER"
 LOGS_FILE=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE_NAME="$LOGS_FILE/($LOG_FILE-$TIMESTAMP.log)"
+LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 REPEATED(){
     if [ $1 -ne 0 ]
