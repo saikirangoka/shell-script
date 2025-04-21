@@ -29,9 +29,22 @@
 
  USAGE(){
     echo -e " $R USAGE : $N <source_dirctory> <destination_directory> <Days>"
+    exit 1
  }
 
  if [ $# -lt 2 ]
  then
     USAGE
+fi
+
+if [ ! -d "$SOURCE_DIRECTORY" ]
+then
+    echo -e "$SOURCE_DIRECTORY does not exist please check"
+    exit 1
+fi
+
+if [ ! -d "$DESTINATION_DIRECTORY"]
+then
+    echo -e "$DESTINATION_DIRECTORY does not exist please check"
+    exit 1
 fi
