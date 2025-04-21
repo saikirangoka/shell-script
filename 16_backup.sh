@@ -52,3 +52,10 @@ fi
 FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +$DAYS)
 
 echo "files are : $FILES"
+
+if [ -n "$FILES" ]
+then
+    echo "Files are : $FILES"
+else
+    echo "no files are older than $DAYS"
+fi
