@@ -43,7 +43,7 @@ then
     exit 1
 fi
 
-if [ ! -d "$DESTINATION_DIRECTORY"]
+if [ ! -d "$DESTINATION_DIRECTORY" ]
 then
     echo -e "$DESTINATION_DIRECTORY does not exist please check"
     exit 1
