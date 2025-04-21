@@ -48,3 +48,7 @@ then
     echo -e "$DESTINATION_DIRECTORY does not exist please check"
     exit 1
 fi
+
+FILES=$(find $SOURCE_DIRECTORY "*.log" +mtime $DAYS)
+
+echo "files are : $FILES"
