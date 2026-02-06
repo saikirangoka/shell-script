@@ -12,6 +12,11 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
 LOGS_FOLDER="/var/logs/shellscriptlogs/"
 LOG_FILE="echo $0 | cut -d "." -f1 "
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
@@ -20,10 +25,10 @@ LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE/$TIMESTAMP"
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "installing $2  is  $R failed $N"
+        echo "installing $2  is  ${R} failed ${N}"
         exit 1
     else
-        echo "installing $2 is $G success $N"
+        echo "installing $2 is ${G} success ${N}"
     fi
 }
 
@@ -37,6 +42,6 @@ do
         dnf install $package -y &>>LOG_FILE_NAME
         VALIDATE $? "$package"
     else
-        echo "$package already installed"
+        echo "$package already ${Y} installed ${N}"
     fi
 done
